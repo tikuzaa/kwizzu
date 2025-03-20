@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/*Media Queriees*/
+@media  (max-height: 717px) or (max-width: 536px){
+    .logo-container img{
+        display: none;
+    }
+}
+
+/**CSS Reset**/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*Info Box Design*/
+.info-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/*Grid Template*/
+.overall-container{
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    height: 100vh;
+    width: 100%;
+}
+.overall-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('../img/coloreddoodlebg.png') no-repeat center/cover;
+    z-index: -1;
+} 
+.image-container{
+    background: url('../img/pinkylongwave.png') center/cover;
+    animation: pinkwave linear 10s infinite;
+}
+@keyframes pinkwave{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+
+/*Mid-Section*/
+
+.overall-container .mid-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Start Box*/
+.overall-container .mid-section .start-box{
+    background-color: rgb(246 255 0 / 94%);
+    /* background: transparent; */
+    /* border: 2px solid rgba(255, 255, 255, .2); */
+    border: 4px solid black;
+    /* backdrop-filter: blur(7px); */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    height: 70%;
+    width: 97%;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overall-container .mid-section .start-box .alignment-box{
+    /* border: 1px solid black; */
+    height: 100%;
+    width: 60%;
+    min-width: 274px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.overall-container .mid-section .start-box .alignment-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    top: -10px;
+}
+/*Input Box Design*/
+.alignment-box .input-wrapper{
+    width: 95%;
+    padding: 30px;
+    background: transparent;
+    /* box-shadow: 0px 0px 10px rgba(0,0,0,0.1); */
+}
+.input-wrapper .input-data{
+    height: 40px;
+    width: 100%;
+    position: relative;
+}
+.input-wrapper .input-data input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 20px;
+    color: rgb(0, 110, 255);
+    border-bottom: 2px solid black;
+    background: transparent;
+}
+.input-data input:focus{
+    outline: none;
+}
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 0.95rem;
+    color: black;
+}
+.input-wrapper .input-data label{
+    position: absolute;
+    font-size: 1rem;
+    bottom: 10px;
+    left: 0;
+    color: black;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper .input-data .underline{
+    position: absolute;
+    bottom: 0px;
+    height: 2px;
+    width: 100%;
+}
+.input-wrapper .input-data .underline:before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgba(61, 255, 61, 1);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+.input-wrapper .input-data input:focus ~ .underline:before,
+.input-wrapper .input-data input:valid ~ .underline:before{
+    transform: scaleX(1);
+}
+/*Button Design*/
+
+.alignment-box #start-button{
+    width: 100%;
+    padding: 6px 60px;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(61, 255, 61, 0.589);
+}
+.alignment-box #start-button:hover{
+    transform: translateY(-2px);
+}
+.alignment-box #start-button:active{
+    transform: translateY(0px);
+    background: rgba(61, 255, 61, 0.7);
+}

@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/*Media Queriees*/
+@media  (max-height: 717px) or (max-width: 536px){
+    .logo-container img{
+        display: none;
+    }
+}
+
+/**CSS Reset**/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*Info Box Design*/
+.info-box{
+    background-color: rgb(246 255 0 / 94%);
+    border-width: 4px;
+    border-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    border-style: solid;
+    width: 97%;
+    max-width: 607px;
+    padding: 30px;
+}
+.info-title{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 34px;
+}
+.info-list .info{
+    padding: 5px 0px;
+    font-size: 17px;
+} 
+
+.continue{
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    text-align: center;
+}
+
+/*Grid Template*/
+.overall-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background: url('../img/coloreddoodlebg.png') no-repeat center/cover;
+    z-index: -1;
+}
+.image-container::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: url('../img/pinkylongwave.png') center/cover;
+    animation: pinkwave linear 10s infinite;
+}
+@keyframes pinkwave{
+    0%{
+        background-position-x: 0;
+    }
+    100%{
+        background-position-x: 1000px;
+    }
+}
+
+.image-container .logo-container{
+    position: absolute;
+    top: -22px; 
+    left: -20px;
+    display:inline-block;
+}
+.logo-container img{
+    height: 200px; 
+    width: 200px;
+}
+.info-box{
+    z-index: 1;
+}
+
+/*Button Design*/
+
+.continue #start-button{
+    width: 194px;
+    color: black;
+    border: 2px solid black;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    background: rgba(61, 255, 61, 0.589);
+}
+.continue #start-button:hover{
+    transform: translateY(-2px);
+}
+.continue #start-button:active{
+    transform: translateY(0px);
+    background: rgba(61, 255, 61, 0.7);
+}
+
+/* welcome box */
+.welcome-box{
+    background-color: #4414fc;
+    position:fixed;
+    color: white;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    animation: welcome 5s ease forwards;
+    animation-delay: 1s;
+    z-index: 10;
+}
+.welcome-box span{
+    position: relative;
+    top: -30px;
+}
+.welcome-box h6{
+    position: relative;
+    left: -8px;
+    top: -10px;
+}
+
+
+@keyframes welcome{
+0%{
+transform:translateY(0);
+opacity: 2;
+font-size: 50px;
+    }
+  50%{
+   opacity: 1;
+    transform: translateY(-1000px);
+    /* display: none; */
+   
+  }  
+  100%{
+    opacity: -1;
+    transform: translateY(-2000px);
+    display: none;
+  }
+}
+
+@keyframes overall{
+    from{
+        opacity:0;
+    transform: translate(0px);
+    display: none;
+    z-index: -1;
+}
+to{
+    opacity:1;
+    transform: translate(1000px);
+    z-index: 1;
+}
+}
+
+@keyframes display{
+    from{
+        display: none;
+    }
+    to{
+        display: grid;
+    }
+}

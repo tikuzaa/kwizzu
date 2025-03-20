@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/questiontemplate.css">
+    <!-- Font Awesome CDN Link for ICONs-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Fav-icon -->
+    <link rel="shortcut icon" href="./img/lomgo.png" type="image/x-icon">
+    <title>Kwizzu.io | Quiz</title>
+</head>
+
+<body id="main-body">
+    <!-- Start Section -->
+    <div class="image-container">
+        <div id="switch" class="overall-container">
+            <section class="top-section">
+                <div class="logo-container" style="position: absolute;top: -22px; left: -20px">
+                    <img src="./img/logo.png" height="200px" width="200px" alt="error image">
+                </div>
+            </section>
+            <section class="mid-section">
+                <div class="semi-circle">
+                    <p id="countDown"></p>
+                </div>
+                <div class="small-box">
+                    <div class="box-item question">
+                        <h2 id="question-no">
+                            Question 1 <span>1/10</span>
+                        </h2>
+                        <p id="question-span">A strawberry is not technically a berry. What is it?</p>
+                    </div>
+                    <div class="options">
+                        <div class="option" id="toSelect-1" onclick="optionSelected(1)">
+                            <span id="option-1">An accessory fruit</span>
+                            <div id="icon-1-1" class="icon tick hide"><i class="fa-solid fa-check" style="color: #38ff45;"></i></div>
+                            <div id="icon-1-2" class="icon cross hide"><i class="fa-solid fa-xmark" style="color: #ff2929;"></i></div>
+                        </div>
+                        <div class="option" id="toSelect-2" onclick="optionSelected(2)">
+                            <span id="option-2">A hybrid vegetable</span>
+                            <div id="icon-2-1" class="icon tick hide"><i class="fa-solid fa-check" style="color: #38ff45;"></i></div>
+                            <div id="icon-2-2" class="icon cross hide"><i class="fa-solid fa-xmark" style="color: #ff2929;"></i></div>
+                        </div>
+                        <div class="option" id="toSelect-3" onclick="optionSelected(3)">
+                            <span id="option-3">A cruciferous vegetable</span>
+                            <div id="icon-3-1" class="icon tick hide"><i class="fa-solid fa-check" style="color: #38ff45;"></i></div>
+                            <div id="icon-3-2" class="icon cross hide"><i class="fa-solid fa-xmark" style="color: #ff2929;"></i></div>
+                        </div>
+                        <div class="option" id="toSelect-4" onclick="optionSelected(4)">
+                            <span id="option-4">Trick question- It's a berry</span>
+                            <div id="icon-4-1" class="icon tick hide"><i class="fa-solid fa-check" style="color: #38ff45;"></i></div>
+                            <div id="icon-4-2" class="icon cross hide"><i class="fa-solid fa-xmark" style="color: #ff2929;"></i></div>
+                        </div>
+                    </div>
+                    <div id="redirect-button" class="box-item next">
+                        <button id="next-button" class="btn btn-success btn-lg">
+                            Next >
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="bottom-section"></section>
+        </div>
+    </div>
+    <!-- Linking js files -->
+    <script src="./js/questions.js"></script>
+    <script src="./js/questiontemplate.js"></script>
+</body>
+
+</html>
